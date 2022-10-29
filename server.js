@@ -8,6 +8,8 @@ const User = require('./models/user.js');
 const bcrypt = require("bcrypt")
 // Dependencies
 const session = require("express-session");
+const sessionsController = require("./controllers/sessions");
+
 
 
 
@@ -38,5 +40,5 @@ app.listen(PORT, () =>
     console.log("this is halloween"))
 
     // Routes / Controllers
-
-app.use("/users", userController)
+app.use("/users", userController);
+app.use("/sessions", sessionsController);
