@@ -35,10 +35,15 @@ app.use(
       saveUninitialized: false,
     })
   )
+    // Routes / Controllers
+    app.use("/users", userController);
+    app.use("/sessions", sessionsController);
+
+    app.get('/', (req, res) => {
+        res.render('index.ejs')
+    })
+
 
 app.listen(PORT, () =>
     console.log("this is halloween"))
 
-    // Routes / Controllers
-app.use("/users", userController);
-app.use("/sessions", sessionsController);
